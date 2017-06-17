@@ -2,6 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>Connectin-Core</groupId>
+	<packaging>war</packaging>
 	<artifactId>connectin-core-modules</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ConnectIn</name>
@@ -134,6 +135,24 @@
 			<version>2.7.6</version>
 		</dependency>
 	</dependencies>
+	<profiles>
+        <profile>
+            <id>openshift</id>
+            <build>
+                <finalName>connectin-social</finalName>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <version>2.1.1</version>
+                        <configuration>
+                            <outputDirectory>deployments</outputDirectory>
+                            <warName>ROOT</warName>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 	<!-- <profiles>
 		<profile>
 			<id>openshift</id>
