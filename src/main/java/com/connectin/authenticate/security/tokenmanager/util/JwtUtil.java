@@ -46,7 +46,7 @@ public class JwtUtil {
 
             return u;
 
-        } catch (JwtException | ClassCastException e) {
+        } catch (JwtException e) {
             return null;
         }
     }

@@ -26,7 +26,7 @@ public class ConnectionDaoImpl implements IConnectionsDao {
 
 	@Override
 	public List<User> getConnectionByUserId(int userId) throws ConnectinBaseException {
-		List<User> connections = new ArrayList<>();
+		List<User> connections = new ArrayList<User>();
 		try {
 			connections = (List<User>) entityManager.createQuery("select p.connection from Connection p where p.user.id=:userId")
 					.setParameter("userId", userId).getResultList();
