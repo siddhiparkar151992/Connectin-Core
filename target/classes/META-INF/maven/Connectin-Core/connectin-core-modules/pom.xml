@@ -134,7 +134,7 @@
 			<version>2.7.6</version>
 		</dependency>
 	</dependencies>
-	<profiles>
+	<!-- <profiles>
 		<profile>
 			<id>openshift</id>
 			<build>
@@ -209,5 +209,5 @@
 			</plugin>
 		</plugins>
 
-	</build>
+	</build> -->
 </project>
