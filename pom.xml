@@ -136,7 +136,7 @@
 	</dependencies>
 	<build>
 		<plugins>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>2.2</version>
@@ -148,7 +148,7 @@
 					<path></path>
 					<update>true</update>
 				</configuration>
-			</plugin>
+			</plugin> -->
 
 			<plugin>
 				<artifactId>maven-release-plugin</artifactId>
