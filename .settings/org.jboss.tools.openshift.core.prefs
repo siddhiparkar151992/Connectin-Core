@@ -1,5 +1,5 @@
 eclipse.preferences.version=1
 org.jboss.tools.openshift.Connection=https\://siddhiparkar151992%40gmail.com@api.starter-us-west-2.openshift.com\:443
 org.jboss.tools.openshift.DeployProject=connectin-core-modules
-org.jboss.tools.openshift.Service=public@openjdk-app
+org.jboss.tools.openshift.Service=public@connectin-social1
 org.jboss.tools.openshift.SourcePath=${workspace_loc\:/connectin-core-modules}
