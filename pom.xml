@@ -130,109 +130,8 @@
 			<version>2.7.6</version>
 		</dependency> -->
 	</dependencies>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <configuration>
-                <archive>
-		          <manifest>
-		            <addClasspath>true</addClasspath>
-		    
-		            <mainClass>com.web.Application</mainClass>
-		          </manifest>
-		        </archive>
-                <source>1.7</source>
-                <target>1.7</target>
-                    <failOnMissingWebXml>false</failOnMissingWebXml>
-                    <outputDirectory>target</outputDirectory>
-              		  <warName>ROOT</warName>
-                </configuration>
-            </plugin>
-		</plugins>
-	</build>
 	
-	<!-- <profiles>
-		<profile>
-			<id>openshift</id>
-			<build>
-
-				<plugins>
-					<plugin>
-
-						<artifactId>maven-war-plugin</artifactId>
-						<version>2.1.2</version>
-						<configuration>
-							<outputDirectory>deployments</outputDirectory>
-							<warName>ROOT</warName>
-						</configuration>
-					</plugin>
-
-					<plugin>
-						<artifactId>maven-release-plugin</artifactId>
-						<version>2.5</version>
-						<configuration>
-							<tagBase>
-								svn://svn.int.company.at/stmlf-repository/prototype/bbsng/tags
-							</tagBase>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
-	<build>
-
-		<plugins>
-			<plugin>
-
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.1.2</version>
-				<configuration>
-					<outputDirectory>deployments</outputDirectory>
-					<warName>ROOT</warName>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<artifactId>maven-release-plugin</artifactId>
-				<version>2.5</version>
-				<configuration>
-					<tagBase>
-						svn://svn.int.company.at/stmlf-repository/prototype/bbsng/tags
-					</tagBase>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>${java-version}</source>
-					<target>${java-version}</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-						<configuration>
-							<classifier>exec</classifier>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-
-	</build> -->
+	
 	
 	<profiles>
 	<profile>
@@ -247,7 +146,12 @@
                   <artifactId>maven-war-plugin</artifactId>
                  
                   <configuration>
-                  
+                  	<archive>
+                        <manifestEntries>
+							 <Dependencies>org.slf4j,org.apache.commons.logging</Dependencies>
+                        </manifestEntries>
+
+                    </archive>
                      <outputDirectory>${project.build.directory}/lib</outputDirectory>
                      <warName>ROOT</warName>
                   </configuration>
