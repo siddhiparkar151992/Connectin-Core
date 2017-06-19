@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>Connectin-Core</groupId>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<artifactId>connectin-core-modules</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ConnectIn</name>
@@ -25,15 +25,15 @@
 		<start-class>com.connectin.web.Application</start-class>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-	
+
 	<dependencies>
 
 		<!-- Spring -->
-		 <dependency>
+		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
 			<scope>provided</scope>
-		</dependency> 
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -51,7 +51,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			
+
 		</dependency>
 
 
@@ -124,40 +124,58 @@
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- <dependency>
-			<groupId>antlr</groupId>
-			<artifactId>antlr</artifactId>
-			<version>2.7.6</version>
-		</dependency> -->
+		<!-- <dependency> <groupId>antlr</groupId> <artifactId>antlr</artifactId> 
+			<version>2.7.6</version> </dependency> -->
 	</dependencies>
-	
-	
-	
-	<profiles>
-	<profile>
-         <!-- When built in OpenShift the 'openshift' profile will be used when invoking mvn. -->
-         <!-- Use this profile for any OpenShift specific customization your app will need. -->
-         <!-- By default that is to put the resulting archive into the 'deployments' folder. -->
-         <!-- http://maven.apache.org/guides/mini/guide-building-for-different-environments.html -->
-         <id>openshift</id>
-         <build>
-            <plugins>
-               <plugin>
-                  <artifactId>maven-war-plugin</artifactId>
-                 
-                  <configuration>
-                  	<archive>
-                        <manifestEntries>
-							 <Dependencies>org.slf4j,org.apache.commons.logging</Dependencies>
-                        </manifestEntries>
 
-                    </archive>
-                     <outputDirectory>${project.build.directory}/lib</outputDirectory>
-                     <warName>ROOT</warName>
-                  </configuration>
-               </plugin>
-            </plugins>
-         </build>
-      </profile>
-	</profiles>
+
+	<build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+    <repositories>
+        <repository>
+            <id>spring-milestone</id>
+            <url>https://repo.spring.io/libs-release</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-milestone</id>
+            <url>https://repo.spring.io/libs-release</url>
+        </pluginRepository>
+    </pluginRepositories>
+	<!-- <profiles>
+		<profile>
+			When built in OpenShift the 'openshift' profile will be used when 
+				invoking mvn.
+			Use this profile for any OpenShift specific customization your app 
+				will need.
+			By default that is to put the resulting archive into the 'deployments' 
+				folder.
+			http://maven.apache.org/guides/mini/guide-building-for-different-environments.html
+			<id>openshift</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+
+						<configuration>
+							<configuration>
+								<source>1.7</source>
+								<target>1.7</target>
+							</configuration>
+							<outputDirectory>${project.build.directory}/lib</outputDirectory>
+							<warName>ROOT</warName>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles> -->
 </project>
