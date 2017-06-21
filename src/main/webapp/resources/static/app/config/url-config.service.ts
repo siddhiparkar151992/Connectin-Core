@@ -3,17 +3,19 @@ import { Injectable}    from 'angular2/core';
 @Injectable()
 export class UrlConfigService{
 	
-	public httpUrl='https://';
+
+	public httpUrl='http://';
 	public baseUrl;
 	public port = 8080;
-	public host ="//connectin-social.herokuapp.com";
+	public mainHost= "//connectin-social.herokuapp.com"
+	public hots="localhost";
 	public apiBaseUrl="/connectin/api/";
 	public userFeedUrl ="user/feed/";	
 
 	constructor() {
 
 //		this.baseUrl = this.httpUrl +this.host+':'+this.port+this.apiBaseUrl;
-		this.baseUrl = this.host+this.apiBaseUrl;
+		this.baseUrl = this.mainHost+this.apiBaseUrl;
 
 	}
 

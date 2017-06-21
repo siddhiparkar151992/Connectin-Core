@@ -15,8 +15,7 @@ import com.connectin.business.user.entity.User;
 import com.connectin.constants.ImageOwnerType;
 
 
-@Table
-@Entity(name="image_db")
+@Table(name="image_db")
 public class Image {
 	@Id
 	@Column(name="id")
