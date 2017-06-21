@@ -23,19 +23,19 @@ public class User implements Serializable{
 	@Id
 	@Column(name="id")
 	private int id;
-	
-	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-    private Image profileImage;
-
-	
-
-	public Image getImages() {
-		return profileImage;
-	}
-
-	public void setImages(Image images) {
-		this.profileImage = images;
-	}
+//	
+//	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+//    private Image profileImage;
+//
+//	
+//
+//	public Image getImages() {
+//		return profileImage;
+//	}
+//
+//	public void setImages(Image images) {
+//		this.profileImage = images;
+//	}
 
 	@Column(name="firstName")
 	private String firstName;

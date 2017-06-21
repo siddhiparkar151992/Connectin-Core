@@ -8,14 +8,14 @@ export class UrlConfigService{
 	public baseUrl;
 	public port = 8080;
 	public mainHost= "//connectin-social.herokuapp.com"
-	public hots="localhost";
+	public host="localhost";
 	public apiBaseUrl="/connectin/api/";
 	public userFeedUrl ="user/feed/";	
 
 	constructor() {
 
-//		this.baseUrl = this.httpUrl +this.host+':'+this.port+this.apiBaseUrl;
-		this.baseUrl = this.mainHost+this.apiBaseUrl;
+		this.baseUrl = this.httpUrl +this.host+':'+this.port+this.apiBaseUrl;
+//		this.baseUrl = this.mainHost+this.apiBaseUrl;
 
 	}
 
