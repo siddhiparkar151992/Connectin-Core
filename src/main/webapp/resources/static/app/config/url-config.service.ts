@@ -3,7 +3,7 @@ import { Injectable}    from 'angular2/core';
 @Injectable()
 export class UrlConfigService{
 	
-	public httpUrl='http://';
+	public httpUrl='https://';
 	public baseUrl;
 	public port = 8080;
 	public host ="connectin-social.herokuapp.com";
