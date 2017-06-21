@@ -14,8 +14,8 @@ export class UrlConfigService{
 
 	constructor() {
 
-		this.baseUrl = this.httpUrl +this.host+':'+this.port+this.apiBaseUrl;
-//		this.baseUrl = this.mainHost+this.apiBaseUrl;
+//		this.baseUrl = this.httpUrl +this.host+':'+this.port+this.apiBaseUrl;
+		this.baseUrl = this.mainHost+this.apiBaseUrl;
 
 	}
 
